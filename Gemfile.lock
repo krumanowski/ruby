@@ -2,6 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
+    docile (1.1.5)
+    json (2.0.2)
     mini_portile2 (2.1.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -19,6 +21,11 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    simplecov (0.12.0)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
 
 PLATFORMS
   ruby
@@ -27,6 +34,7 @@ DEPENDENCIES
   nokogiri
   rack (~> 1.1)
   rspec
+  simplecov (~> 0.12.0)
 
 BUNDLED WITH
    1.13.6

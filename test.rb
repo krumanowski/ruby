@@ -50,10 +50,10 @@ end
 
 
 
-a = [1, 2, 3, 3.4, 4, 5, 6, 7, 8, 9, 9.1, 10, 11, 11.8, 12, 13, 14, 15].shuffle
-puts "Tablica:"
-print a
-puts
-quicksort a
-puts "Quicksort:"
-print a
+#a = [1, 2, 3, 3.4, 4, 5, 6, 7, 8, 9, 9.1, 10, 11, 11.8, 12, 13, 14, 15].shuffle
+#puts "Tablica:"
+#print a
+#puts
+#quicksort a
+#puts "Quicksort:"
+#print a
