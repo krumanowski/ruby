@@ -1,53 +1,58 @@
 require 'simplecov'
 SimpleCov.start
 
-require './test'
+require 'test'
 
 RSpec.describe 'test.rb' do
   describe '#quicksort' do
 
 #1    
-    it 'sortowanie nie gubi danych' do
+    it 'sortowanie nie gubi danych na intach' do
           expect(quicksort([5, 4, 3]))
           contain_exactly(3, 4, 5)
     end
-#2    
+#2
+    it 'sortowanie nie gubi danych na floatach' do
+          expect(quicksort([5.1, 4.5, 3.8]))
+          contain_exactly(3.8, 4.5, 5.1)
+    end
+#3    
     it 'prawidłowe sortowanie na intach' do
           expect(quicksort([3, 2, 1]))
           eq([1, 2, 3])
     end
-#3    
+#4    
     it 'prawidłowe sortowanie na floatach' do
           expect(quicksort([3.1, 2.3, 1.1]))
           eq([1.1, 2.3, 3.1])
     end
-#4    
+#5    
     it 'sortowanie na intach' do
           expect(quicksort([3, 2, 1]))
           eq([1, 2, 3])
     end
-#5   
+#6   
     it 'sortowanie na floatach' do
           expect(quicksort([3.0, 2.3, 1.9]))
           eq([1.9, 2.3, 3.0])
     end
-#6    
+#7    
     it 'prawidłowy string w tablicy' do
         expect(quicksort(%w(lorem ipsum dolor sit amet))).to eq(%w(amet dolor ipsum lorem sit))
     end
-#7    
+#8    
     it 'inty zwracają inty ' do
           expect { quicksort([5, 100, 200, -7]).to be_a_kind_of(integer) }
     end
-#8    
+#9    
     it 'floaty zwracają floaty' do
           expect { quicksort([5.0, 70.1, 20.23, -8.09]).to be_a_kind_of(float) }
     end
-#9  
+#10  
     it 'błędny string w tablicy' do
           expect(quicksort([0, 1, 2, "test"])).to raise_error 
     end
-#10    
+#11    
     it 'pusta tablica' do
           expect { quicksort([]).to be_a_kind_of(Boolean) }
     end  

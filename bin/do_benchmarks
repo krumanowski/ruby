@@ -1,0 +1,20 @@
+#! /usr/bin/env ruby
+
+require 'benchmark'
+require_relative '../lib/test'
+
+array1 = (1..500).map { rand }
+array2 = (1..500).map { rand }
+array3 = (1..5_000).map { rand }
+array4 = (1..5_000).map { rand }
+array5 = (1..10_000).map { rand }
+array6 = (1..10_000).map { rand }
+
+Benchmark.bm(4) do |x|
+  x.report('sort!   500 via quicksort  ') { quicksort(array1) } 
+  x.report('sort!   500 via dup.sort  ') { array1.dup.sort! }   
+  x.report('sort! 5_000 via quicksort  ') { quicksort(array2) }
+  x.report('sort! 5_000 via dup.sort  ') { array3.dup.sort! }
+  x.report('sort! 10_000 via dup.sort ') { array5.dup.sort! }
+  x.report('sort! 10_000 via quicksort ') { quicksort(array6) }
+end
